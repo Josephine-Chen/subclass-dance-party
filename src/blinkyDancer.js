@@ -20,6 +20,8 @@
 
 var BlinkyDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
+  this.$node = $('<span class="jumpyDancer"><img src="http://static.tumblr.com/314971942b627340e56cf8b245a15295/kd9ixl5/eaoo4kl1h/tumblr_static_5z2xtrwgkzs4400k8cckkwc0o.gif"></span>');
+    Dancer.prototype.setPosition.call(this, top, left);
 };
 
 BlinkyDancer.prototype = Object.create(Dancer.prototype);
