@@ -30,7 +30,7 @@ $(document).ready(function() {
       ($('body').width() - 500) * Math.random(),
       Math.random() * 1000
     );
-  $('body').append(dancer.$node);
+      $('body').append(dancer.$node);
     }
   });
 });
