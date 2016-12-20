@@ -12,14 +12,14 @@ JumpyDancer.prototype.step = function() {
   var doBounce = function(element, times, distance, speed) {
     for (i = 0; i < times; i++) {
       element.animate({
-          marginTop: '-=' + distance
-        }, speed)
+        marginTop: '-=' + distance
+      }, speed)
         .animate({
           marginTop: '+=' + distance
         }, speed);
     }
-  }
-  $(".jumpyDancer").click(function() {
-    doBounce($(this), 20, '10px', 300);
+  };
+  $('.jumpyDancer').click(function() {
+    doBounce($(this), 20, 50 * Math.random(), 300);
   });
 };

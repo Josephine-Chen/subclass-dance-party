@@ -19,13 +19,19 @@ $(document).ready(function() {
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
     // make a dancer with a random position
-
-    var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+    if (dancerMakerFunctionName === 'startRace') {
+      for (var i = 0; i < 10; i++) {
+        var dancer = new RunningDancer(i * 100, 0, Math.random() * 1000);
+        $('body').append(dancer.$node);
+      }
+    } else {
+      var dancer = new dancerMakerFunction(
+      ($('body').height() - 500) * Math.random(),
+      ($('body').width() - 500) * Math.random(),
       Math.random() * 1000
     );
-    $('body').append(dancer.$node);
+  $('body').append(dancer.$node);
+    }
   });
 });
 

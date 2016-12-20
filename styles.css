@@ -18,6 +18,8 @@ body, a:link, a:visited, a:active{
 .topbar{
   height:32px;
   background-color: #555;
+  position: fixed;
+  z-index: 1;
 }
 .title{
   background-color: #777;
