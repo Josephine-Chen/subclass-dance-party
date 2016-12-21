@@ -39,3 +39,10 @@ body, a:link, a:visited, a:active{
 .jumpyDancer {
   position: absolute;
 }
+div#container {
+  height: 600px;
+  width: 600px;
+}
+div.wanderingDancer {
+  position: fixed;
+}

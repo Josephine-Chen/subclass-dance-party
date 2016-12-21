@@ -24,6 +24,12 @@ $(document).ready(function() {
         var dancer = new RunningDancer(i * 100, 0, Math.random() * 1000);
         $('body').append(dancer.$node);
       }
+    }
+    if (dancerMakerFunctionName === 'lineUp'){
+      for (var i = 0; i < window.dancers.length; i++) {
+        Dancer.prototype.lineUp.call(window.dancers[i]);
+        //window.dancers[i].prototype.lineUp();
+      }
     } else {
       var dancer = new dancerMakerFunction(
       ($('body').height() - 500) * Math.random(),
@@ -31,6 +37,7 @@ $(document).ready(function() {
       Math.random() * 1000
     );
       $('body').append(dancer.$node);
+      window.dancers.push(dancer);
     }
   });
 });

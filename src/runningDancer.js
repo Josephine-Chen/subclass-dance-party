@@ -1,6 +1,7 @@
 var RunningDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('<span class="runningDancer"><img src="src/runningDancer.gif"></span>');
+  var dancers = ['runningDancer.gif', 'runningDancerLong.gif'];
+  this.$node = $('<span class="runningDancer"><img src="src/' + dancers[Math.floor(Math.random() * dancers.length)] + '"></span>');
   Dancer.prototype.setPosition.call(this, top);
 };
 
