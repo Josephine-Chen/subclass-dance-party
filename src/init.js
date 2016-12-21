@@ -30,12 +30,29 @@ $(document).ready(function() {
         Dancer.prototype.lineUp.call(window.dancers[i]);
         //window.dancers[i].prototype.lineUp();
       }
+    }
+    if (dancerMakerFunctionName === 'WanderingDancer') {
+      var dtop = ($('body').height() - 500) * Math.random();
+      var dleft = ($('body').width() - 500) * Math.random();
+      var dancer = new WanderingDancer(dtop, dleft, Math.random() * 1000);
+      $('body').append(dancer.$node);
+      window.dancers.push(dancer);
+      for (var i = 0; i < window.dancers.length; i++) {
+        var top = window.dancers[i].top;
+        var left = window.dancers[i].left;
+        var dist = Math.sqrt((dtop - top) ** 2 + (dleft - left) ** 2);
+        console.log(dist);
+        if (dist > 100) {
+          console.log('flipped');
+          console.log(dancer.$node);
+          dancer.$node.html('<div id="container>"<span class="wanderingDancer"><img src="src/wanderingDancer2.gif"></span></div>');
+        }
+      }
     } else {
       var dancer = new dancerMakerFunction(
       ($('body').height() - 500) * Math.random(),
       ($('body').width() - 500) * Math.random(),
-      Math.random() * 1000
-    );
+      Math.random() * 1000);
       $('body').append(dancer.$node);
       window.dancers.push(dancer);
     }
