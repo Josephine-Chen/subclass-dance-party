@@ -33,3 +33,20 @@ describe('blinkyDancer', function() {
   });
 });
 
+describe('jumpyDancer', function() {
+  var jumpyDancer;
+
+  beforeEach(function() {
+    jumpyDancer = new JumpyDancer(20, 50);
+  });
+
+  it ('should have a jQuery node', function() {
+    expect(jumpyDancer.$node).to.be.an.instanceof(jQuery);
+  });
+
+  it('should have a step function', function() {
+    expect(jumpyDancer.step).to.be.a('function');
+  });
+
+});
+
